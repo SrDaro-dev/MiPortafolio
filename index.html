@@ -1,100 +1,101 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio - Guillermo Melgoza</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      scroll-behavior: smooth;
-    }
-    header {
-      background: #222;
-      color: #fff;
-      padding: 1rem 0;
-      position: fixed;
-      width: 100%;
-      top: 0;
-      left: 0;
-      z-index: 1000;
-    }
-    nav ul {
-      list-style: none;
-      display: flex;
-      justify-content: center;
-      margin: 0;
-      padding: 0;
-    }
-    nav ul li {
-      margin: 0 15px;
-    }
-    nav ul li a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 80px 20px;
-      min-height: 100vh;
-    }
-    section:nth-child(even) {
-      background: #f4f4f4;
-    }
-    h1, h2 {
-      text-align: center;
-    }
-    .construccion {
-      text-align: center;
-      font-size: 1.5rem;
-      color: red;
-      margin-top: 20px;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    <nav>
-      <ul>
-        <li><a href="#acerca">Acerca de mí</a></li>
-        <li><a href="#cv">CV</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#proyectos">Proyectos</a></li>
-        <li><a href="#servicios">Servicios / Consultorías</a></li>
-        <li><a href="#certificaciones">Certificaciones / Logros</a></li>
-        <li><a href="#blog">Blog</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
-  </header>
+<section id="acerca" class="hero">
+  <div class="hero-content">
+    <h1>Guillermo Melgoza</h1>
+    <h2>Especialista en Desarrollo de Sistemas y Gestión de Proyectos TI</h2>
+    <p class="tagline">Transformando procesos mediante la innovación tecnológica y la automatización.</p>
+    <a href="#cv" class="btn">Ver mi CV</a>
+  </div>
+</section>
 
-  <main>
-    <section id="acerca">
-      <h1>Acerca de mí</h1>
-      <p class="construccion">🚧 Sitio en construcción 🚧</p>
-    </section>
-    <section id="cv">
-      <h2>CV</h2>
-    </section>
-    <section id="habilidades">
-      <h2>Habilidades</h2>
-    </section>
-    <section id="proyectos">
-      <h2>Proyectos</h2>
-    </section>
-    <section id="servicios">
-      <h2>Servicios / Consultorías</h2>
-    </section>
-    <section id="certificaciones">
-      <h2>Certificaciones / Logros</h2>
-    </section>
-    <section id="blog">
-      <h2>Blog</h2>
-    </section>
-    <section id="contacto">
-      <h2>Contacto</h2>
-    </section>
-  </main>
-</body>
-</html>
+<section class="about-company">
+  <h2>Quién soy</h2>
+  <p>
+    Con más de 11 años de experiencia en entornos industriales, me especializo en la creación de soluciones tecnológicas
+    que optimizan procesos, mejoran la eficiencia y generan resultados medibles.  
+    He desarrollado e implementado sistemas de incentivos, compras, inventarios, ventas, análisis patrimonial
+    y producción en tiempo real, siempre enfocado en la mejora continua.
+  </p>
+</section>
+
+<section class="values">
+  <h2>Mi propuesta de valor</h2>
+  <div class="values-grid">
+    <div class="value-card">
+      <h3>Innovación</h3>
+      <p>Diseño soluciones creativas y escalables que generan ventaja competitiva.</p>
+    </div>
+    <div class="value-card">
+      <h3>Eficiencia</h3>
+      <p>Automatizo procesos para reducir costos, tiempos y errores operativos.</p>
+    </div>
+    <div class="value-card">
+      <h3>Liderazgo</h3>
+      <p>He dirigido proyectos de alto impacto, garantizando entregables exitosos.</p>
+    </div>
+    <div class="value-card">
+      <h3>Resultados</h3>
+      <p>Mi trabajo se mide en logros tangibles: optimización, productividad y crecimiento.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  background: url('https://images.unsplash.com/photo-1526378722430-6a2f6b8f80c4?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  padding: 0 20px;
+}
+.hero-content h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+.hero-content h2 {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 10px 0;
+}
+.tagline {
+  font-size: 1.2rem;
+  margin: 20px 0;
+}
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #ff5722;
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: #e64a19;
+}
+.about-company, .values {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+.value-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  text-align: center;
+}
+.value-card h3 {
+  margin-bottom: 10px;
+  color: #ff5722;
+}
+</style>
