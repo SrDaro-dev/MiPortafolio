@@ -1,0 +1,15 @@
+.btn-cv {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #2e7d32; /* verde seco */
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+.btn-cv:hover {
+  background-color: #1b5e20; /* verde más oscuro */
+}
