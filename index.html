@@ -1,149 +1,100 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Portafolio - Guillermo Melgoza</title>
-    <style>
-        /* Reset básico */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-
-        /* Barra de navegación */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #333;
-            color: white;
-            display: flex;
-            justify-content: center;
-            z-index: 1000;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-
-        nav ul li {
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 15px 0;
-            display: block;
-        }
-
-        nav ul li a:hover {
-            color: #ff9900;
-        }
-
-        /* Secciones */
-        section {
-            padding: 100px 20px;
-            min-height: 100vh;
-        }
-
-        section:nth-child(odd) {
-            background-color: #f4f4f4;
-        }
-
-        section:nth-child(even) {
-            background-color: #e2e2e2;
-        }
-
-        h1, h2 {
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        p {
-            max-width: 800px;
-            margin: 0 auto 20px auto;
-            text-align: center;
-        }
-
-        /* Estilo para “Sitio en Construcción” */
-        .construction {
-            font-size: 2em;
-            font-weight: bold;
-            color: #ff4d4d;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portafolio - Guillermo Melgoza</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+    header {
+      background: #222;
+      color: #fff;
+      padding: 1rem 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 1000;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      padding: 80px 20px;
+      min-height: 100vh;
+    }
+    section:nth-child(even) {
+      background: #f4f4f4;
+    }
+    h1, h2 {
+      text-align: center;
+    }
+    .construccion {
+      text-align: center;
+      font-size: 1.5rem;
+      color: red;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-
-    <!-- Barra de navegación -->
+  <header>
     <nav>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#acerca">Acerca de</a></li>
-            <li><a href="#cv">CV</a></li>
-            <li><a href="#habilidades">Habilidades</a></li>
-            <li><a href="#proyectos">Proyectos</a></li>
-            <li><a href="#blog">Blog</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#certificaciones">Certificaciones</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+      <ul>
+        <li><a href="#acerca">Acerca de mí</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#habilidades">Habilidades</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#servicios">Servicios / Consultorías</a></li>
+        <li><a href="#certificaciones">Certificaciones / Logros</a></li>
+        <li><a href="#blog">Blog</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
     </nav>
+  </header>
 
-    <!-- Secciones -->
-    <section id="home">
-        <h1 class="construction">Sitio en Construcción</h1>
-        <p>Hola, soy Guillermo Melgoza. Este portafolio estará listo pronto. Gracias por tu paciencia.</p>
-    </section>
-
+  <main>
     <section id="acerca">
-        <h2>Acerca de mí</h2>
-        <p>Aquí puedes escribir un resumen sobre tu experiencia profesional, tu filosofía de trabajo y objetivos.</p>
+      <h1>Acerca de mí</h1>
+      <p class="construccion">🚧 Sitio en construcción 🚧</p>
     </section>
-
     <section id="cv">
-        <h2>Currículum Vitae</h2>
-        <p>Puedes ofrecer un enlace para descargar tu CV en PDF o mostrar un resumen aquí.</p>
+      <h2>CV</h2>
     </section>
-
     <section id="habilidades">
-        <h2>Habilidades</h2>
-        <p>Lenguajes de programación, tecnologías y herramientas que dominas.</p>
+      <h2>Habilidades</h2>
     </section>
-
     <section id="proyectos">
-        <h2>Proyectos</h2>
-        <p>Descripción de tus proyectos más destacados con enlaces a repositorios o demos.</p>
+      <h2>Proyectos</h2>
     </section>
-
-    <section id="blog">
-        <h2>Blog</h2>
-        <p>Opcional: artículos técnicos o posts sobre programación, optimización de procesos, etc.</p>
-    </section>
-
     <section id="servicios">
-        <h2>Servicios / Consultorías</h2>
-        <p>Descripción de los servicios que ofreces, alcance y modalidad de trabajo.</p>
+      <h2>Servicios / Consultorías</h2>
     </section>
-
     <section id="certificaciones">
-        <h2>Certificaciones / Logros</h2>
-        <p>Muestra diplomas, certificaciones técnicas, premios o reconocimientos.</p>
+      <h2>Certificaciones / Logros</h2>
     </section>
-
+    <section id="blog">
+      <h2>Blog</h2>
+    </section>
     <section id="contacto">
-        <h2>Contacto</h2>
-        <p>Correo electrónico, formulario o enlaces a redes profesionales.</p>
+      <h2>Contacto</h2>
     </section>
-
+  </main>
 </body>
 </html>
