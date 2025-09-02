@@ -115,16 +115,44 @@ Creo firmemente que la tecnología debe ser un motor de cambio, y es por eso que
   </section>
 
   <!-- ===== CONTACTO ===== -->
-  <section class="contact" id="contact">
-    <h2>Contacto</h2>
-    <p>Puedes escribirme a <a href="mailto:eg.melgoza@outlook.com">eg.melgoza@outlook.com</a></p>
-    <form>
-      <input type="text" placeholder="Tu nombre" required>
-      <input type="email" placeholder="Tu correo" required>
-      <textarea placeholder="Tu mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+<section class="contact" id="contact">
+  <h2>Contacto</h2>
+  <p>Puedes escribirme a <a href="mailto:eg.melgoza@outlook.com">eg.melgoza@outlook.com</a></p>
+  
+  <form id="contactForm" action="https://formspree.io/f/mzzaaeon" method="POST">
+    <input type="text" name="name" placeholder="Tu nombre" required>
+    <input type="email" name="email" placeholder="Tu correo" required>
+    <textarea name="message" placeholder="Tu mensaje" required></textarea>
+    <button type="submit">Enviar</button>
+  </form>
+
+  <div id="formMessage" style="text-align:center; margin-top:15px;"></div>
+</section>
+
+<!-- JS para mensaje de éxito/error -->
+<script>
+const form = document.getElementById('contactForm');
+const messageDiv = document.getElementById('formMessage');
+
+form.addEventListener('submit', async function(e) {
+  e.preventDefault();
+
+  const formData = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: form.method,
+    body: formData,
+    headers: { 'Accept': 'application/json' }
+  });
+
+  if (response.ok) {
+    messageDiv.innerHTML = '<p style="color:green;">¡Mensaje enviado correctamente!</p>';
+    form.reset();
+  } else {
+    messageDiv.innerHTML = '<p style="color:red;">Hubo un error. Intenta nuevamente.</p>';
+  }
+});
+</script>
 
   <!-- ===== FOOTER ===== -->
   <footer>
