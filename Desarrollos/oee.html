@@ -1,15 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
-<!-- HEAD-->
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OEE | DARODEV</title>
-  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="oee.css">
-  <script src="oee.js" defer></script>
 </head>
-
 <body>
 
   <!-- BARRA SUPERIOR -->
@@ -20,72 +16,87 @@
 
   <!-- SECCIÓN PRINCIPAL -->
   <main class="proyecto-main">
+    
+    <!-- Introducción -->
     <section class="section">
       <h1>¿Qué es OEE?</h1>
       <p>
-        La Eficiencia General de los Equipos (OEE) es un indicador que mide qué tan
-        eficiente es un proceso productivo considerando tres factores: <b>Disponibilidad</b>,
-        <b>Rendimiento</b> y <b>Calidad</b>. Un OEE del 100% significa producción perfecta.
+        El OEE (Overall Equipment Effectiveness) es un indicador clave en la industria que mide la eficiencia
+        total de un equipo o proceso. Se calcula a partir de tres factores:
+        <strong>Disponibilidad</strong>, <strong>Rendimiento</strong> y <strong>Calidad</strong>.
       </p>
     </section>
 
+    <!-- Ejemplos -->
     <section class="section">
-      <h2>Ejemplos en la industria</h2>
+      <h2>Ejemplos de uso en la industria</h2>
       <ul class="lista">
-        <li>En una línea de ensamblaje para calcular pérdidas por paros no planeados.</li>
-        <li>En procesos de inyección de plástico para medir calidad de piezas sin defectos.</li>
-        <li>En la industria alimentaria para monitorear el rendimiento de la maquinaria.</li>
+        <li>En una línea de producción automotriz, se mide cuánto tiempo las máquinas estuvieron realmente operativas.</li>
+        <li>En la industria alimentaria, se evalúa el porcentaje de productos fabricados sin defectos.</li>
+        <li>En manufactura textil, se mide la velocidad real de producción contra la velocidad ideal.</li>
       </ul>
     </section>
 
+    <!-- Fórmulas -->
+    <section class="section">
+      <h2>Fórmulas</h2>
+      <div class="formula-cards">
+        <div class="formula-card">
+          <h3>Disponibilidad</h3>
+          <p>(Tiempo Operativo ÷ Tiempo Planificado) × 100</p>
+        </div>
+        <div class="formula-card">
+          <h3>Rendimiento</h3>
+          <p>(Producción Real ÷ Producción Teórica) × 100</p>
+        </div>
+        <div class="formula-card">
+          <h3>Calidad</h3>
+          <p>(Unidades Buenas ÷ Unidades Totales) × 100</p>
+        </div>
+        <div class="formula-card highlight">
+          <h3>OEE</h3>
+          <p>Disponibilidad × Rendimiento × Calidad ÷ 10000</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Calculadora -->
     <section class="section">
       <h2>Calculadora de OEE</h2>
-      <form id="oeeForm" class="calc-form">
-        <!-- DISPONIBILIDAD -->
+      <form class="calc-form" id="oeeForm">
+        
         <fieldset class="fieldset">
           <h3>Disponibilidad</h3>
           <div class="calc-grid">
-            <label>
-              Tiempo planificado (min):
+            <label>Tiempo Planificado (min)
               <input type="number" id="tiempoPlan" required>
             </label>
-            <label>
-              Tiempo de paros (min):
-              <input type="number" id="tiempoParos" required>
+            <label>Tiempo Operativo (min)
+              <input type="number" id="tiempoOp" required>
             </label>
           </div>
         </fieldset>
 
-        <!-- RENDIMIENTO -->
         <fieldset class="fieldset">
           <h3>Rendimiento</h3>
           <div class="calc-grid">
-            <label>
-              Piezas producidas:
-              <input type="number" id="piezasProducidas" required>
+            <label>Producción Teórica
+              <input type="number" id="prodTeo" required>
             </label>
-            <label>
-              Velocidad ideal (piezas/min):
-              <input type="number" id="velocidadIdeal" required>
-            </label>
-            <label>
-              Tiempo operativo real (min):
-              <input type="number" id="tiempoOperativo" required>
+            <label>Producción Real
+              <input type="number" id="prodReal" required>
             </label>
           </div>
         </fieldset>
 
-        <!-- CALIDAD -->
         <fieldset class="fieldset">
           <h3>Calidad</h3>
           <div class="calc-grid">
-            <label>
-              Piezas buenas:
-              <input type="number" id="piezasBuenas" required>
+            <label>Unidades Totales
+              <input type="number" id="unidTot" required>
             </label>
-            <label>
-              Piezas totales:
-              <input type="number" id="piezasTotales" required>
+            <label>Unidades Buenas
+              <input type="number" id="unidBuenas" required>
             </label>
           </div>
         </fieldset>
@@ -94,7 +105,44 @@
         <div id="errores" class="errores"></div>
       </form>
 
-      <div class="result-cards" id="resultados"></div>
+      <div class="result-cards" id="resultados" style="display:none;">
+        <div class="result-card">
+          <h4>Disponibilidad</h4>
+          <p id="resDisp">0%</p>
+        </div>
+        <div class="result-card">
+          <h4>Rendimiento</h4>
+          <p id="resRend">0%</p>
+        </div>
+        <div class="result-card">
+          <h4>Calidad</h4>
+          <p id="resCal">0%</p>
+        </div>
+        <div class="result-card highlight">
+          <h4>OEE</h4>
+          <p id="resOee">0%</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Código -->
+    <section class="section">
+      <h2>Ejemplo de código</h2>
+      <h3>C#</h3>
+      <pre><code>
+double disponibilidad = (tiempoOperativo / tiempoPlanificado) * 100;
+double rendimiento = (produccionReal / produccionTeorica) * 100;
+double calidad = (unidadesBuenas / unidadesTotales) * 100;
+double oee = (disponibilidad * rendimiento * calidad) / 10000;
+      </code></pre>
+
+      <h3>Python</h3>
+      <pre><code>
+disponibilidad = (tiempo_operativo / tiempo_planificado) * 100
+rendimiento = (produccion_real / produccion_teorica) * 100
+calidad = (unidades_buenas / unidades_totales) * 100
+oee = (disponibilidad * rendimiento * calidad) / 10000
+      </code></pre>
     </section>
   </main>
 

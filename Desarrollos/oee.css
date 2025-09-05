@@ -1,18 +1,175 @@
-/* Estilos específicos para OEE */
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-/* Secciones */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f9fafb;
+    color: #111827;
+    line-height: 1.6;
+}
+
+/* BARRA SUPERIOR */
+.proyecto-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 20px 10%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+.header-left {
+    font-weight: 800;
+    font-size: 1.2rem;
+}
+.header-right {
+    font-weight: 700;
+}
+
+/* MAIN */
+.proyecto-main {
+    max-width: 1100px;
+    margin: 100px auto 60px; /* margen superior para dejar espacio a header */
+    padding: 0 20px;
+}
+.section {
+    margin-bottom: 48px;
+}
 .section h1 {
-  color: #111827;
-  margin-bottom: 12px;
+    font-size: 2rem;
+    margin-bottom: 10px;
 }
-
 .section h2 {
-  color: #16a34a;
-  margin-bottom: 10px;
+    font-size: 1.5rem;
+    margin-bottom: 14px;
+    color: #2563eb;
+}
+.section p {
+    color: #333;
 }
 
-/* Resultados destacados */
-.result-card.highlight {
-  background: #dcfce7;
-  border-color: #86efac;
+/* LISTA */
+.lista {
+    padding-left: 18px;
+}
+.lista li {
+    margin: 6px 0;
+}
+
+/* FORMULAS */
+.formula-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 16px;
+    margin: 18px 0;
+}
+.formula-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.04);
+}
+.formula-card.highlight {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+/* CALCULADORA */
+.calc-form {
+    display: grid;
+    gap: 18px;
+    margin-top: 10px;
+}
+.fieldset {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 4px 18px rgba(0,0,0,.04);
+}
+.calc-grid {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+}
+label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+}
+input {
+    margin-top: 6px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+input:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37,99,235,.15);
+}
+.btn-primary {
+    background: #2563eb;
+    color: #fff;
+    border: none;
+    border-radius: 999px;
+    padding: 12px 22px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .2s;
+}
+.btn-primary:hover {
+    background: #1d4ed8;
+}
+.errores {
+    margin-top: 10px;
+    color: #b91c1c;
+    font-weight: 600;
+}
+
+/* RESULTADOS */
+.result-cards {
+    display: grid;
+    gap: 16px;
+    margin-top: 18px;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+}
+.result-card {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    box-shadow: 0 4px 18px rgba(0,0,0,.04);
+}
+.result-card h4 {
+    margin-bottom: 8px;
+}
+.result-card p {
+    font-size: 1.6rem;
+    font-weight: 800;
+}
+
+/* CÓDIGO */
+pre {
+    background: #f3f4f6;
+    padding: 14px;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin-top: 10px;
+}
+code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
 }
