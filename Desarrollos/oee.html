@@ -1,25 +1,102 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OEE | DARODEV</title>
-    <link rel="stylesheet" href="proyecto.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OEE | DARODEV</title>
+  <!-- Estilos generales -->
+  <link rel="stylesheet" href="../proyecto.css">
+  <!-- Estilos específicos para OEE -->
+  <link rel="stylesheet" href="oee.css">
 </head>
 <body>
 
-    <!-- BARRA SUPERIOR -->
-    <header class="proyecto-header">
-        <div class="header-left">DARODEV</div>
-        <div class="header-right">OEE</div>
-    </header>
+  <!-- BARRA SUPERIOR -->
+  <header class="proyecto-header">
+    <div class="header-left">DARODEV</div>
+    <div class="header-right">OEE</div>
+  </header>
 
-    <!-- SECCIÓN PRINCIPAL -->
-    <main class="proyecto-main">
-        <h1>Página en construcción</h1>
-        <p>Pronto estará disponible toda la información sobre este proyecto.</p>
-        <img src="../assets/Working01.png" alt="Proyecto OEE">
-    </main>
+  <!-- SECCIÓN PRINCIPAL -->
+  <main class="proyecto-main">
+    <section class="section">
+      <h1>¿Qué es OEE?</h1>
+      <p>
+        La Eficiencia General de los Equipos (OEE) es un indicador que mide qué tan
+        eficiente es un proceso productivo considerando tres factores: <b>Disponibilidad</b>,
+        <b>Rendimiento</b> y <b>Calidad</b>. Un OEE del 100% significa producción perfecta.
+      </p>
+    </section>
 
+    <section class="section">
+      <h2>Ejemplos en la industria</h2>
+      <ul class="lista">
+        <li>En una línea de ensamblaje para calcular pérdidas por paros no planeados.</li>
+        <li>En procesos de inyección de plástico para medir calidad de piezas sin defectos.</li>
+        <li>En la industria alimentaria para monitorear el rendimiento de la maquinaria.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>Calculadora de OEE</h2>
+      <form id="oeeForm" class="calc-form">
+        <!-- DISPONIBILIDAD -->
+        <fieldset class="fieldset">
+          <h3>Disponibilidad</h3>
+          <div class="calc-grid">
+            <label>
+              Tiempo planificado (min):
+              <input type="number" id="tiempoPlan" required>
+            </label>
+            <label>
+              Tiempo de paros (min):
+              <input type="number" id="tiempoParos" required>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- RENDIMIENTO -->
+        <fieldset class="fieldset">
+          <h3>Rendimiento</h3>
+          <div class="calc-grid">
+            <label>
+              Piezas producidas:
+              <input type="number" id="piezasProducidas" required>
+            </label>
+            <label>
+              Velocidad ideal (piezas/min):
+              <input type="number" id="velocidadIdeal" required>
+            </label>
+            <label>
+              Tiempo operativo real (min):
+              <input type="number" id="tiempoOperativo" required>
+            </label>
+          </div>
+        </fieldset>
+
+        <!-- CALIDAD -->
+        <fieldset class="fieldset">
+          <h3>Calidad</h3>
+          <div class="calc-grid">
+            <label>
+              Piezas buenas:
+              <input type="number" id="piezasBuenas" required>
+            </label>
+            <label>
+              Piezas totales:
+              <input type="number" id="piezasTotales" required>
+            </label>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="btn-primary">Calcular OEE</button>
+        <div id="errores" class="errores"></div>
+      </form>
+
+      <div class="result-cards" id="resultados"></div>
+    </section>
+  </main>
+
+  <script src="oee.js"></script>
 </body>
 </html>

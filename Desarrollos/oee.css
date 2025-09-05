@@ -1,0 +1,18 @@
+/* Estilos específicos para OEE */
+
+/* Secciones */
+.section h1 {
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.section h2 {
+  color: #16a34a;
+  margin-bottom: 10px;
+}
+
+/* Resultados destacados */
+.result-card.highlight {
+  background: #dcfce7;
+  border-color: #86efac;
+}
