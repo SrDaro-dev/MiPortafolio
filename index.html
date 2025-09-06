@@ -10,8 +10,8 @@
 
   <!-- ===== NAVBAR ===== -->
   <header>
-    <nav class="navbar">
-  <div class="logo">DARODEV</div>
+<div class="navbar">
+  <div class="logo">DARODEV</div> 
   <ul class="nav-links">
     <li><a href="#about">Sobre mí</a></li>
     <li><a href="#skills">Habilidades</a></li>
@@ -20,10 +20,13 @@
     <li><a href="cv.pdf" target="_blank">CV</a></li>
     <li><a href="blog.html">Blog</a></li>
   </ul>
-</nav>
+  <div class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
   </header>
-
-  <!-- ===== HERO ===== -->
   <!-- ===== HERO ===== -->
 <section class="hero">
   <div class="hero-container">
@@ -98,17 +101,17 @@ Creo firmemente que la tecnología debe ser un motor de cambio, y es por eso que
       <div class="project-card">
         <h3>Cálculo de OEE</h3>
         <p>Sistema para medir y optimizar la eficiencia de equipos industriales.</p>
-		<a href="Desarrollos/oee.html" target="_blank">Ver más</a>	
+		<a href="Desarrollos/oee.html" target="_self">Ver más</a>	
       </div>
       <div class="project-card">
         <h3>Sistema de Inventarios</h3>
         <p>Aplicación para gestionar existencias y optimizar compras/ventas.</p>
-      <a href="Desarrollos/inventarios.html" target="_blank">Ver más</a>
+      <a href="Desarrollos/inventarios.html" target="self">Ver más</a>
       </div>
       <div class="project-card">
        <h3>Control de Comisiones de Venta</h3>
       <p>Automatización de cálculos de incentivos y reportes para vendedores.</p>
-      <a href="Desarrollos/comisiones.html" target="_blank">Ver más</a>
+      <a href="Desarrollos/comisiones.html" target="_self">Ver más</a>
       </div>
     </div>
   </section>
@@ -157,6 +160,8 @@ form.addEventListener('submit', async function(e) {
   <footer>
     <p>© 2025 Guillermo Melgoza - Todos los derechos reservados</p>
   </footer>
+
+<script src="main.js"></script>
 
 </body>
 </html>
