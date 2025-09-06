@@ -63,12 +63,13 @@ section {
 
 /* ===== HERO ===== */
 .hero {
-  height: 85vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   background: linear-gradient(135deg, #887BE0, #7BD3E0);
   color: #fff;
   padding: 0 10%;
+  flex-wrap: wrap;
 }
 
 .hero-container {
@@ -77,10 +78,12 @@ section {
   justify-content: space-between;
   align-items: center;
   gap: 5%;
+  flex-wrap: wrap;
 }
 
 .hero-left {
-  flex: 1;
+  flex: 1 1 300px;
+  min-width: 280px;
 }
 
 .intro-box {
@@ -95,6 +98,8 @@ section {
 .hero-left h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
+  line-height: 1.2;
+  word-break: break-word;
 }
 
 .hero-left p {
@@ -106,6 +111,7 @@ section {
 .hero-buttons {
   display: flex;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 
 .btn-primary {
@@ -138,9 +144,10 @@ section {
 }
 
 .hero-right {
-  flex: 1;
+  flex: 1 1 280px;
   display: flex;
   justify-content: center;
+  min-width: 250px;
 }
 
 .hero-right img {
@@ -373,7 +380,7 @@ form button:hover {
   }
 
   .hero-left h1 {
-    font-size: 2.2rem;
+    font-size: 2rem;
   }
 
   .hero-left p {
@@ -408,25 +415,30 @@ form button:hover {
 
 @media (max-width: 480px) {
   .hero-left h1 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
+    line-height: 1.2;
   }
 
   .hero-left p {
-    font-size: 1rem;
+    font-size: 0.95rem;
   }
 
   .btn-primary, .btn-secondary {
-    padding: 10px 20px;
-    font-size: 0.9rem;
+    padding: 8px 18px;
+    font-size: 0.85rem;
   }
 
   form input,
   form textarea {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 
   .about p {
-    font-size: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .hero-right img {
+    max-width: 90%;
   }
 }
 
