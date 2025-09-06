@@ -1,47 +1,47 @@
-document.getElementById("oeeForm").addEventListener("submit", function(e) {
-  e.preventDefault();
+// oee.js
 
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("oeeForm");
+  const resultados = document.getElementById("resultados");
   const erroresDiv = document.getElementById("errores");
-  const resultadosDiv = document.getElementById("resultados");
-  erroresDiv.textContent = "";
-  resultadosDiv.innerHTML = "";
 
-  try {
-    // === DISPONIBILIDAD ===
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    // Obtener valores
     const tiempoPlan = parseFloat(document.getElementById("tiempoPlan").value);
-    const tiempoParos = parseFloat(document.getElementById("tiempoParos").value);
-    const disponibilidad = ((tiempoPlan - tiempoParos) / tiempoPlan) * 100;
+    const tiempoOp = parseFloat(document.getElementById("tiempoOp").value);
+    const prodTeo = parseFloat(document.getElementById("prodTeo").value);
+    const prodReal = parseFloat(document.getElementById("prodReal").value);
+    const unidTot = parseFloat(document.getElementById("unidTot").value);
+    const unidBuenas = parseFloat(document.getElementById("unidBuenas").value);
 
-    // === RENDIMIENTO ===
-    const piezasProducidas = parseFloat(document.getElementById("piezasProducidas").value);
-    const velocidadIdeal = parseFloat(document.getElementById("velocidadIdeal").value);
-    const tiempoOperativo = parseFloat(document.getElementById("tiempoOperativo").value);
-    const rendimiento = (piezasProducidas / (velocidadIdeal * tiempoOperativo)) * 100;
+    // Validación
+    let errores = [];
+    if (tiempoOp > tiempoPlan) errores.push("El tiempo operativo no puede ser mayor que el planificado.");
+    if (prodReal > prodTeo) errores.push("La producción real no puede ser mayor que la teórica.");
+    if (unidBuenas > unidTot) errores.push("Las unidades buenas no pueden superar a las totales.");
 
-    // === CALIDAD ===
-    const piezasBuenas = parseFloat(document.getElementById("piezasBuenas").value);
-    const piezasTotales = parseFloat(document.getElementById("piezasTotales").value);
-    const calidad = (piezasBuenas / piezasTotales) * 100;
+    if (errores.length > 0) {
+      erroresDiv.innerHTML = errores.map(err => `<p style="color:red;">${err}</p>`).join("");
+      resultados.style.display = "none";
+      return;
+    }
 
-    // === OEE ===
-    const oee = (disponibilidad / 100) * (rendimiento / 100) * (calidad / 100) * 100;
+    erroresDiv.innerHTML = "";
+
+    // Cálculos
+    const disponibilidad = (tiempoOp / tiempoPlan) * 100;
+    const rendimiento = (prodReal / prodTeo) * 100;
+    const calidad = (unidBuenas / unidTot) * 100;
+    const oee = (disponibilidad * rendimiento * calidad) / 10000;
 
     // Mostrar resultados
-    const resultados = [
-      { titulo: "Disponibilidad", valor: disponibilidad.toFixed(2) + "%" },
-      { titulo: "Rendimiento", valor: rendimiento.toFixed(2) + "%" },
-      { titulo: "Calidad", valor: calidad.toFixed(2) + "%" },
-      { titulo: "OEE", valor: oee.toFixed(2) + "%", destacado: true }
-    ];
+    document.getElementById("resDisp").textContent = disponibilidad.toFixed(1) + "%";
+    document.getElementById("resRend").textContent = rendimiento.toFixed(1) + "%";
+    document.getElementById("resCal").textContent = calidad.toFixed(1) + "%";
+    document.getElementById("resOee").textContent = oee.toFixed(1) + "%";
 
-    resultados.forEach(r => {
-      const card = document.createElement("div");
-      card.className = "result-card" + (r.destacado ? " highlight" : "");
-      card.innerHTML = `<h4>${r.titulo}</h4><p>${r.valor}</p>`;
-      resultadosDiv.appendChild(card);
-    });
-
-  } catch (err) {
-    erroresDiv.textContent = "Error al calcular. Verifica los datos ingresados.";
-  }
+    resultados.style.display = "grid"; // mostrar tarjetas
+  });
 });

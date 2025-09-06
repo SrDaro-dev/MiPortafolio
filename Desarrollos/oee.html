@@ -13,52 +13,227 @@
     <div class="header-left">DARODEV</div>
     <div class="header-right">OEE</div>
   </header>
-
   <!-- SECCIÓN PRINCIPAL -->
   <main class="proyecto-main">
     
     <!-- Introducción -->
-    <section class="section">
-      <h1>¿Qué es OEE?</h1>
-      <p>
-        El OEE (Overall Equipment Effectiveness) es un indicador clave en la industria que mide la eficiencia
-        total de un equipo o proceso. Se calcula a partir de tres factores:
-        <strong>Disponibilidad</strong>, <strong>Rendimiento</strong> y <strong>Calidad</strong>.
-      </p>
-    </section>
+<section class="section oee-section">
+  <div class="oee-header">
+	<h1 class="oee-title">OEE: La brújula de la productividad industrial</h1>
+	<img src="img/oee-dashboard.png" alt="Dashboard de OEE" class="oee-img">
+  </div>
+<section class="oee-concepto">
+  <!-- Título principal dinámico -->
+  <h2 class="oee-subtitle">¿Cuánto produce tu máquina realmente?</h2>
 
-    <!-- Ejemplos -->
-    <section class="section">
-      <h2>Ejemplos de uso en la industria</h2>
-      <ul class="lista">
-        <li>En una línea de producción automotriz, se mide cuánto tiempo las máquinas estuvieron realmente operativas.</li>
-        <li>En la industria alimentaria, se evalúa el porcentaje de productos fabricados sin defectos.</li>
-        <li>En manufactura textil, se mide la velocidad real de producción contra la velocidad ideal.</li>
+  <!-- Subtítulo destacado -->
+  <p class="oee-highlight">OEE responde a la pregunta:</p>
+
+  <!-- Pregunta clave con estilo destacado -->
+  <blockquote class="oee-question">
+    “De todo el tiempo que mi equipo estaba planificado para producir, ¿cuánto se produjo correctamente, a la velocidad adecuada y sin interrupciones?”
+  </blockquote>
+
+  <p class="oee-intro-list">Un OEE del 100% significa:</p>
+
+  <!-- Lista con iconos PNG -->
+  <ul class="oee-list">
+    <li>
+      <img src="img/icon-quality.png" alt="Piezas buenas" class="oee-icon">
+      La máquina solo produjo piezas buenas.
+    </li>
+    <li>
+      <img src="img/icon-speed.png" alt="Velocidad teórica" class="oee-icon">
+      La máquina funcionó exactamente a la velocidad teórica.
+    </li>
+    <li>
+      <img src="img/icon-time.png" alt="Operativa todo el tiempo" class="oee-icon">
+      La máquina estuvo operativa todo el tiempo planificado, sin paradas.
+    </li>
+  </ul>
+
+  <p class="oee-note">
+    Todo al mismo tiempo. Eso, en la práctica, es casi imposible de lograr, y los valores típicos de OEE en la industria varían entre <strong>60% y 85%</strong>, dependiendo del sector.
+  </p>
+</section>
+
+<section class="oee-componentes">
+  <!-- Título principal -->
+  <h2 class="oee-subtitle">Componentes del OEE</h2>
+
+  <!-- Introducción -->
+  <p class="oee-intro">
+    El <strong>OEE (Overall Equipment Effectiveness)</strong> se calcula combinando tres factores críticos que reflejan la eficiencia global de una máquina o proceso industrial. Cada uno de estos componentes mide un aspecto distinto de la productividad y permite identificar áreas de mejora.
+  </p>
+
+  <!-- Disponibilidad -->
+  <div class="oee-factor">
+    <h3>Disponibilidad (<em>Availability</em>)</h3>
+    <p>
+      La disponibilidad mide <strong>cuánto tiempo la máquina estuvo realmente operativa</strong> respecto al tiempo que se esperaba que estuviera en funcionamiento. Este indicador refleja las pérdidas por paradas planificadas y no planificadas, como mantenimiento, cambios de producto o fallas inesperadas.
+    </p>
+    <div class="oee-formula-block">
+      <p><strong>Disponibilidad = (Tiempo Operativo ÷ Tiempo Planificado) × 100</strong></p>
+      <ul>
+        <li><strong>Tiempo planificado:</strong> Total de tiempo que se esperaba que el equipo funcionara durante un turno, día o período determinado.</li>
+        <li><strong>Tiempo operativo:</strong> Tiempo durante el cual la máquina estuvo efectivamente produciendo, descontando todas las paradas.</li>
       </ul>
-    </section>
+    </div>
+    <div class="oee-example">
+      <p><strong>Ejemplo práctico:</strong></p>
+      <p>Si un turno de 8 horas tenía 1 hora de parada por mantenimiento, el tiempo operativo real es de 7 horas. La disponibilidad se calcula así:</p>
+      <p class="oee-example-calc"><strong>Disponibilidad = (7 ÷ 8) × 100 = 87,5%</strong></p>
+    </div>
+    <p>
+      <strong>Importancia del componente:</strong>
+      <ul>
+        <li>Identifica pérdidas de tiempo por paradas.</li>
+        <li>Permite planificar mantenimiento preventivo sin afectar la producción.</li>
+        <li>Ayuda a comparar la eficiencia entre turnos o líneas de producción.</li>
+      </ul>
+    </p>
+  </div>
 
-    <!-- Fórmulas -->
-    <section class="section">
-      <h2>Fórmulas</h2>
-      <div class="formula-cards">
-        <div class="formula-card">
-          <h3>Disponibilidad</h3>
-          <p>(Tiempo Operativo ÷ Tiempo Planificado) × 100</p>
-        </div>
-        <div class="formula-card">
-          <h3>Rendimiento</h3>
-          <p>(Producción Real ÷ Producción Teórica) × 100</p>
-        </div>
-        <div class="formula-card">
-          <h3>Calidad</h3>
-          <p>(Unidades Buenas ÷ Unidades Totales) × 100</p>
-        </div>
-        <div class="formula-card highlight">
-          <h3>OEE</h3>
-          <p>Disponibilidad × Rendimiento × Calidad ÷ 10000</p>
-        </div>
-      </div>
-    </section>
+  <!-- Rendimiento -->
+  <div class="oee-factor">
+    <h3>Rendimiento (<em>Performance</em>)</h3>
+    <p>
+      El rendimiento evalúa <strong>la velocidad real de producción frente a la velocidad ideal o teórica</strong>. Este indicador refleja la eficiencia operativa de la máquina durante el tiempo en que estuvo produciendo y permite identificar pérdidas por lentitud, microparadas o ineficiencias de proceso.
+    </p>
+    <div class="oee-formula-block">
+      <p><strong>Rendimiento = (Producción Real ÷ Producción Teórica) × 100</strong></p>
+      <ul>
+        <li><strong>Producción teórica:</strong> La cantidad de unidades que la máquina debería producir en el tiempo operativo a su velocidad máxima.</li>
+        <li><strong>Producción real:</strong> La cantidad de unidades que la máquina produjo efectivamente durante ese tiempo.</li>
+      </ul>
+    </div>
+    <div class="oee-example">
+      <p><strong>Ejemplo práctico:</strong></p>
+      <p>Si una máquina podía producir 1000 piezas en un turno y realmente produjo 900, el rendimiento se calcula así:</p>
+      <p class="oee-example-calc"><strong>Rendimiento = (900 ÷ 1000) × 100 = 90%</strong></p>
+    </div>
+    <p>
+      <strong>Importancia del componente:</strong>
+      <ul>
+        <li>Identifica pérdidas por velocidad insuficiente o microparadas.</li>
+        <li>Permite optimizar los ajustes de la máquina o procesos de producción.</li>
+        <li>Es útil para comparar líneas o turnos y detectar cuellos de botella.</li>
+      </ul>
+    </p>
+  </div>
+
+  <!-- Calidad -->
+  <div class="oee-factor">
+    <h3>Calidad (<em>Quality</em>)</h3>
+    <p>
+      La calidad mide <strong>el porcentaje de productos buenos frente al total producido</strong>, indicando la efectividad del proceso en generar productos conformes. Las unidades defectuosas o que requieren retrabajo se descuentan de este cálculo.
+    </p>
+    <div class="oee-formula-block">
+      <p><strong>Calidad = (Unidades Buenas ÷ Unidades Totales) × 100</strong></p>
+      <ul>
+        <li><strong>Unidades totales:</strong> Todas las piezas producidas durante un período determinado.</li>
+        <li><strong>Unidades buenas:</strong> Solo las piezas que cumplen con los estándares de calidad sin necesidad de retrabajo.</li>
+      </ul>
+    </div>
+    <div class="oee-example">
+      <p><strong>Ejemplo práctico:</strong></p>
+      <p>Si se produjeron 900 unidades y 810 fueron buenas, la calidad se calcula así:</p>
+      <p class="oee-example-calc"><strong>Calidad = (810 ÷ 900) × 100 = 90%</strong></p>
+    </div>
+    <p>
+      <strong>Importancia del componente:</strong>
+      <ul>
+        <li>Detecta problemas de defectos, errores de proceso o variabilidad en la calidad.</li>
+        <li>Permite implementar acciones correctivas y preventivas.</li>
+        <li>Es clave para mantener la satisfacción del cliente y reducir desperdicios.</li>
+      </ul>
+    </p>
+  </div>
+</section>
+
+<section class="oee-calculo">
+  <!-- Título de la sección -->
+  <h2 class="oee-subtitle">Cálculo del OEE</h2>
+
+  <!-- Introducción -->
+  <p class="oee-intro">
+    El <strong>OEE (Overall Equipment Effectiveness)</strong> combina los tres componentes que ya conoces: <strong>Disponibilidad, Rendimiento y Calidad</strong>, para medir la eficiencia global de una máquina o línea de producción.
+  </p>
+
+  <!-- Fórmula general -->
+  <div class="oee-formula-block">
+    <p><strong>OEE = (Disponibilidad × Rendimiento × Calidad) ÷ 10000</strong></p>
+    <p>Nota: Cada componente se expresa en porcentaje, por eso se divide entre 100 × 100 = 10000.</p>
+  </div>
+
+  <!-- Pasos del cálculo -->
+  <div class="oee-steps">
+    <h3>Pasos para calcular el OEE:</h3>
+    <ol>
+      <li><strong>Obtener la Disponibilidad:</strong> Calcula el tiempo real de operación respecto al tiempo planificado. Ejemplo: 87,5%.</li>
+      <li><strong>Obtener el Rendimiento:</strong> Evalúa la velocidad real de producción frente a la velocidad teórica. Ejemplo: 90%.</li>
+      <li><strong>Obtener la Calidad:</strong> Mide el porcentaje de productos buenos frente al total producido. Ejemplo: 95%.</li>
+      <li><strong>Multiplicar los tres valores y dividir entre 10000:</strong></li>
+    </ol>
+  </div>
+
+  <!-- Ejemplo práctico -->
+  <div class="oee-example">
+    <p><strong>Ejemplo práctico:</strong></p>
+    <p>
+      Si una máquina tiene los siguientes valores:
+    </p>
+    <ul>
+      <li>Disponibilidad: 87,5%</li>
+      <li>Rendimiento: 90%</li>
+      <li>Calidad: 95%</li>
+    </ul>
+    <p class="oee-example-calc"><strong>OEE = (87,5 × 90 × 95) ÷ 10000 = 74,8%</strong></p>
+  </div>
+
+  <!-- Interpretación -->
+  <div class="oee-interpretacion">
+    <p><strong>Interpretación del resultado:</strong></p>
+    <ul>
+      <li>OEE de 100%: la máquina produjo solo piezas buenas, a la velocidad ideal y sin paradas.</li>
+      <li>OEE entre 60% y 85%: típico en la industria, indica eficiencia razonable.</li>
+      <li>OEE superior a 85%: rendimiento excelente.</li>
+    </ul>
+  </div>
+
+  <!-- Beneficios -->
+  <div class="oee-beneficios">
+    <p><strong>Beneficios de calcular el OEE:</strong></p>
+    <ul>
+      <li>Detectar pérdidas de tiempo, velocidad y calidad.</li>
+      <li>Priorizar acciones correctivas en los procesos.</li>
+      <li>Monitorear la productividad en tiempo real y comparar líneas, turnos o plantas.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- Fórmulas -->
+<section class="section formulas">
+  <h2 class="section-title">📐 Fórmulas del OEE</h2>
+  <div class="formula-cards">
+    <div class="formula-card">
+      <h3>Disponibilidad</h3>
+      <p><span class="formula">Tiempo Operativo ÷ Tiempo Planificado × 100</span></p>
+    </div>
+    <div class="formula-card">
+      <h3>Rendimiento</h3>
+      <p><span class="formula">Producción Real ÷ Producción Teórica × 100</span></p>
+    </div>
+    <div class="formula-card">
+      <h3>Calidad</h3>
+      <p><span class="formula">Unidades Buenas ÷ Unidades Totales × 100</span></p>
+    </div>
+    <div class="formula-card highlight">
+      <h3>OEE</h3>
+      <p><span class="formula">Disponibilidad × Rendimiento × Calidad ÷ 10,000</span></p>
+    </div>
+  </div>
+</section>
 
     <!-- Calculadora -->
     <section class="section">
@@ -125,25 +300,50 @@
       </div>
     </section>
 
-    <!-- Código -->
-    <section class="section">
-      <h2>Ejemplo de código</h2>
-      <h3>C#</h3>
-      <pre><code>
+ <!-- Código -->
+<section class="section">
+  <h2>Ejemplo de código</h2>
+  <p class="oee-intro">
+    Para que un programador principiante entienda mejor cómo calcular el OEE, 
+    primero debemos identificar las <strong>variables de entrada</strong> que usamos en el cálculo:
+  </p>
+  <ul class="oee-list">
+    <li><strong>tiempoPlanificado:</strong> minutos totales que la máquina debía trabajar.</li>
+    <li><strong>tiempoOperativo:</strong> minutos reales que la máquina estuvo produciendo.</li>
+    <li><strong>produccionTeorica:</strong> piezas que debería producir en condiciones ideales.</li>
+    <li><strong>produccionReal:</strong> piezas que realmente produjo.</li>
+    <li><strong>unidadesTotales:</strong> todas las piezas fabricadas (buenas y defectuosas).</li>
+    <li><strong>unidadesBuenas:</strong> piezas correctas que cumplen con la calidad.</li>
+  </ul>
+
+  <p class="oee-highlight">
+    Con estas variables podemos calcular los tres componentes (Disponibilidad, Rendimiento y Calidad) 
+    y luego combinarlos para obtener el <strong>OEE total</strong>.
+  </p>
+
+  <h3>C#</h3>
+  <pre><code>
 double disponibilidad = (tiempoOperativo / tiempoPlanificado) * 100;
 double rendimiento = (produccionReal / produccionTeorica) * 100;
 double calidad = (unidadesBuenas / unidadesTotales) * 100;
 double oee = (disponibilidad * rendimiento * calidad) / 10000;
-      </code></pre>
+  </code></pre>
 
-      <h3>Python</h3>
-      <pre><code>
+  <h3>Python</h3>
+  <pre><code>
 disponibilidad = (tiempo_operativo / tiempo_planificado) * 100
 rendimiento = (produccion_real / produccion_teorica) * 100
 calidad = (unidades_buenas / unidades_totales) * 100
 oee = (disponibilidad * rendimiento * calidad) / 10000
-      </code></pre>
-    </section>
+  </code></pre>
+
+  <p class="oee-note">
+    🎯 Nota: el divisor <code>10000</code> aparece porque cada componente (Disponibilidad, Rendimiento y Calidad) 
+    se calcula como porcentaje. Multiplicar tres porcentajes genera un número mucho mayor, 
+    así que se normaliza dividiendo entre 100 × 100 = <strong>10,000</strong>.
+  </p>
+</section>
+
   </main>
 
   <script src="oee.js"></script>
